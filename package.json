@@ -1,0 +1,31 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "login and accounts",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "login",
+    "accounts"
+  ],
+  "author": "Trevor Lee",
+  "license": "ISC",
+  "dependencies": {
+  	"bcryptjs": "*",
+  	"body-parser": "*",
+  	"connect-flash": "*",
+  	"cookie-parser": "^1.4.1",
+  	"express": "*",
+  	"express-handlebars": "*",
+  	"express-messages": "*",
+  	"express-session": "*",
+  	"express-validator": "*",
+  	"mongodb": "*",
+  	"mongoose": "*",
+  	"passport": "*",
+  	"passport-http": "*",
+  	"passport-local": "*"
+  }
+}
