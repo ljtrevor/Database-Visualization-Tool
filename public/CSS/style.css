@@ -15,7 +15,8 @@ body {
 /* Custom page header */
 .header {
   padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5; 
+  /*border-bottom: 1px solid black; */
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -28,7 +29,8 @@ body {
 .footer {
   padding-top: 20px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5; 
+  /*border-top: 1px solid black; */
   text-align: right;
 }
 
@@ -79,3 +81,17 @@ body {
     border-bottom: 0;
   }
 }
+
+th {
+    height: 40px;
+}
+
+table {
+    width: 300px;
+}
+
+footer {
+	margin-top: 70px;
+}
+
+
