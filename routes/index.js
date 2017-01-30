@@ -7,7 +7,7 @@ router.get('/', function(req, res){
 });
 
 
-
+/*
 
 router.get('/users/login', ensureAuthenticated, function(req, res){
 	res.render('login');
@@ -21,6 +21,6 @@ function ensureAuthenticated(req, res, next){
 		res.redirect('/');
 	}
 }
-
+*/
 
 module.exports = router;
