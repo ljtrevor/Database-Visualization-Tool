@@ -11,19 +11,21 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/loginapp');
-var db = mongoose.connection;
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
 // initialize app
 var app = express();
 
+var routes = require('./app/routes');
+var users = require('./app/controllers/users');
+
 // view Engine
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout:'layout'}));
+handlebars = exphbs.create({
+  layoutsDir: path.join(__dirname, 'public/views/layouts'),
+  defaultLayout: 'layout',
+  extname: 'handlebars'
+});
+app.engine('handlebars', handlebars.engine)
 app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'public/views'));
 
 // BodyParser Middleware
 app.use(bodyParser.json());
@@ -32,7 +34,6 @@ app.use(cookieParser());
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
-
 //express session
 app.use(session({
     secret: 'dogseat',
@@ -77,6 +78,19 @@ app.use(function (req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
+
+
+var client = require('mongodb').MongoClient;
+var dbConnUrl = process.env.MONGOLAB_URI ||
+                'mongodb://localhost/loginapp';
+
+console.log('db server: ', dbConnUrl);
+
+client.connect(dbConnUrl, {}, function(err, db) {
+    if (err) {
+        console.error(err);
+    }
+});
 
 // Set Port
 app.set('port', (process.env.PORT || 3000));

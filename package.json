@@ -1,7 +1,7 @@
 {
-  "name": "login",
+  "name": "bellatrix_seng371",
   "version": "1.0.0",
-  "description": "login and accounts",
+  "description": "Web-based Database Visualization App - Milestone 1",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,6 @@
     "login",
     "accounts"
   ],
-  "author": "Trevor Lee",
   "license": "ISC",
   "dependencies": {
   	"bcryptjs": "*",
@@ -23,9 +22,12 @@
   	"express-session": "*",
   	"express-validator": "*",
   	"mongodb": "*",
-  	"mongoose": "*",
   	"passport": "*",
   	"passport-http": "*",
-  	"passport-local": "*"
+  	"passport-local": "*",
+  	"express": "~4.14",
+    "mongoose": "~3.8.19",
+    "angular": "~1.6.0",
+    "url": "0.11.0"
   }
 }
