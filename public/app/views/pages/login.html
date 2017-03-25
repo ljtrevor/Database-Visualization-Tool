@@ -1,0 +1,67 @@
+<div class="row marketing">
+<div class="col-lg-6" style="border-right: 1px solid #e5e5e5;">
+    <!--<div class="col-lg-6" style="border-right: 1px solid black;"> -->
+  <div>
+  <br class="autofitDiv">
+    <h1><u><center>Bellatrix</center></u></h1>
+    <h3><center>See your database like never before.</center></h3>
+    <br>
+  </div>
+
+  <div class="row marketing">
+    <div class="autofitDiv">
+		<center>
+      <table>
+
+		      <tr>
+		        <th>Multiple diagram layouts&nbsp;&nbsp;&nbsp;</th>
+		        <th><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/244376-200.png" style="width:35px;height:30px;"></th>
+		      </tr>
+		      <tr>
+		        <th>Easily interact with tables&nbsp;&nbsp;&nbsp;</th>
+		        <th><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/244376-200.png" style="width:35px;height:30px;"></th>
+		      </tr>
+		      <tr>
+		        <th>Export diagrams&nbsp;&nbsp;&nbsp;</th>
+		        <th><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/244376-200.png" style="width:35px;height:30px;"></th>
+		      </tr>
+
+
+      </table>
+	    </center>
+      <br>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-lg-6">
+      <table>
+        <tr>
+          <th style="padding: 0px 0px 0px 80px;"/> <h3 class="page-header">Login</h3>
+            <form ng-submit = "login.doLogin()">
+              <div class = "form-group">
+                <label>Username</label>
+                <input type = "text"
+                class = "form-control"
+                ng-model="login.loginData.username">
+              </div>
+
+            <div class = "form-group">
+              <label>Password</label>
+              <input type = "password"
+              class = "form-control"
+              ng-model="login.loginData.password">
+            </div>
+          <table>
+          <div class = "alert alert-danger" ng-if="login.error">
+            {{login.error}}
+          </div>
+
+          <!-- LOGIN BUTTON -->
+          <button type = "submit" style="float: right;" class="btn btn-primary">
+            <span ng-if = "!login.processing">Login</span>
+            <span ng-if = "login.processing" class ="spinner">Login
+              <span class = "glyphicon glypicon-repeat"></span></span>
+            </button>
+            <br><br>
+        </div>

@@ -1,0 +1,75 @@
+<head>
+    <title>Projects</title>
+</head>
+<body>
+    <div class="container" ng-controller="projectController">
+
+        <h2>Welcome to Bellatrix!</h2>
+
+        <div class = "alert alert-info" ng-show="message">
+            {{message}}
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div>
+                    <h4>Create a Project:</h4>
+                    <tr></tr>
+                    <table class="table table-responsive">
+                        <tr></tr>
+                        <tbody>
+                            <form>
+                                <tr>
+                                    <td><input class="form-control" type="text" placeholder="Project Name..." name="newProjectName" ng-model="formProjectData.title" required></td>
+                                    <td><input class="form-control" type="text" placeholder="MySQL Address..." name="newProjectAddress" ng-model="formProjectData.address" required></td>
+                                    <td><input class="form-control" type="text" placeholder="DB Name..." name="newProjectDBName" ng-model="formProjectData.dbname" required></td>
+                                    <td><input class="form-control" type="text" placeholder="Username..." name="newProjectUsername" ng-model="formProjectData.username" required></td>
+                                    <td><input type="password" class="form-control" placeholder="Password..." name="newProjectPassword" ng-model="formProjectData.password"></td>
+                                    <td><button type="submit" class="btn btn-primary" ng-click="createProject()">Create Project!</button></td>
+                                </tr>
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h4>Current Projects:</h4>
+                    <table class="table table-responsive" >
+                        <tbody id="table-body"/>
+                        <tr>
+                            <td>Project Name</td>
+                            <td>MySQL Address</td>
+                            <td>DB Name</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tbody id="table-body"  >
+                                <tr ng-repeat="project in projectData" ng-hide="isEditingProject">
+                                    <td>{{project.title}}</td>
+                                    <td>{{project.address}}</td>
+                                    <td>{{project.dbname}}</td>
+                                    <td><button type="button" class="btn btn-default" ng-click="editProject(project._id)">Edit</button></td>
+                                    <td><button type="button" class="btn btn-default" ng-click="deleteProject(project._id)">Delete</button></td>
+                                    <td><button type="button" class="btn btn-default" ng-click="visualizeProject(project._id)">Visualize!</button></td>
+                                </tr>
+                                <tr ng-show="isEditingProject">
+                                    <form name="editForm">
+                                        <td><input class="form-control" type="text" placeholder="Project Name..." name="editProjectName" ng-model="editProjectData.title" required></td>
+                                        <td><input class="form-control" type="text" placeholder="MySQL Address..." name="editProjectAddress" ng-model="editProjectData.address" required></td>
+                                        <td><input class="form-control" type="text" placeholder="DB Name..." name="editProjectDBName" ng-model="editProjectData.dbname" required></td>
+                                        <td><input class="form-control" type="text" placeholder="Username..." name="editProjectUsername" ng-model="editProjectData.username" required></td>
+                                        <td><input type="password" class="form-control" placeholder="Password..." name="editProjectPassword" ng-model="editProjectData.password"></td>
+                                        <td><button type="submit" class="btn btn-default" ng-disabled="editForm.$invalid" ng-click="editForm.$valid && editProject(project._id)">Confirm</button></td>
+                                        <td><button type="button" class="btn btn-default"  ng-click="cancelEdit()">Cancel</button></td>
+                                    </form>
+                                </tr>
+                        </tbody>
+                        <tbody id="table-body"/>
+                    </table>
+                    <h6 ng-if="length == 0">No Projects!</h6>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>

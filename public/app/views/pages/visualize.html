@@ -1,0 +1,165 @@
+<div class="row marketing">
+  <div class="col-lg-3" style="border-right: 1px solid #e5e5e5;">
+
+    <div class="autofitDiv">
+      <h3>Project: {{databaseInfo[0].title}}</h3>
+      <hr style="margin-top: 0px;
+                margin-bottom: 0px;
+                border: 0;
+                border-top: 1px solid #eee;" !important></hr>
+    </div>
+
+    <div class="autofitDiv">
+      <h4><center>Attributes</center></h4>
+      <hr style="margin-top: 0px;
+                margin-bottom: 0px;
+                border: 0;
+                border-top: 1px solid #eee;" !important></hr>
+    </div>
+    <br>
+
+    <div class="row marketing">
+      <div class="autofitDiv">
+        <center>
+          <table>
+            <tr>
+              <button class="btn btn-default" ng-click="showAllAttributes()">Show Attributes</button>
+            </tr>
+            <br>
+            <tr>
+              <button class="btn btn-default" ng-click="hideAllAttributes()">Hide Attributes</button>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+    <br>
+    <hr style="margin-top: 0px;
+               margin-bottom: 0px;
+               border: 0;
+               border-top: 1px solid #eee;" !important></hr>
+
+    <div class="autofitDiv">
+      <h4><center>Layouts</center></h4>
+      <hr style="margin-top: 0px;
+                 margin-bottom: 0px;
+                 border: 0;
+                 border-top: 1px solid #eee;" !important></hr>
+    </div>
+
+    <br>
+    <div class="row marketing">
+      <div class="autofitDiv">
+        <center>
+          <table>
+            <tr>
+              <button class="btn btn-default" ng-click="initializeForceDirectedLayout()">Force Directed Layout</button>
+            </tr>
+            <br>
+            <tr>
+              <button class="btn btn-default" ng-click="initializeCircularLayout()">Circular Layout</button>
+            </tr>
+            <br>
+            <tr>
+              <button class="btn btn-default" ng-click="initializeLayeredDigraphLayout()">Layered Digraph Layout</button>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+    <br>
+    <hr style="margin-top: 0px;
+              margin-bottom: 0px;
+              border: 0;
+              border-top: 1px solid #eee;" !important></hr>
+
+    <div class="autofitDiv">
+      <h4 ng-show="ERToggle"><center>Tables</center></h4>
+      <h4 ng-hide="ERToggle"><center>Entities</center></h4>
+      <hr style="margin-top: 0px;
+                margin-bottom: 0px;
+                border: 0;
+                border-top: 1px solid #eee;" !important></hr>
+    </div>
+
+    <br>
+    <div class="row marketing" ng-show="ERToggle" style="overflow-y:scroll; height: 18%" >
+      <div class="autofitDiv">
+          <ul ng-repeat="value in conceptualTablesList">{{value}}<ul>
+      </div>
+    </div>
+    <div class="row marketing" ng-hide="ERToggle" style="overflow-y:scroll; height: 18%" >
+      <div class="autofitDiv">
+          <ul ng-repeat="entity in conceptualEntitiesList">{{entity}}<ul>
+      </div>
+    </div>
+    <br>
+    <hr style="margin-top: 0px;
+              margin-bottom: 0px;
+              border: 0;
+              border-top: 1px solid #eee;" !important></hr>
+
+    <div class="autofitDiv">
+      <h4><center>ER Diagram Toggle</center></h4>
+      <hr style="margin-top: 0px;
+                margin-bottom: 0px;
+                border: 0;
+                border-top: 1px solid #eee;" !important></hr>
+    </div>
+
+    <br>
+    <div class="row marketing" ng-show="ERToggle">
+      <div class="autofitDiv">
+        <center>
+          <table>
+            <tr>
+              <button class="btn btn-default" ng-click="showERDiagram(false)">Conceptual ER Diagram</button>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+    <div class="row marketing" ng-hide="ERToggle">
+      <div class="autofitDiv">
+        <center>
+          <table>
+            <tr>
+              <button class="btn btn-default" ng-click="showERDiagram(true)">ER Diagram</button>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+
+    <br>
+    <hr style="margin-top: 0px;
+              margin-bottom: 0px;
+              border: 0;
+              border-top: 1px solid #eee;" !important></hr>
+
+    <br>
+    <div class="row marketing">
+      <div class="autofitDiv">
+        <center>
+          <table>
+            <tr>
+              <button class="btn btn-default" ng-click="exportImage()">Export Image</button>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+  </div>
+  <br>
+
+
+
+  <div class="col-lg-9" ng-show="ERToggle">
+    <h3>Entity Relationship Diagram</h3>
+    <div id="myERDiagramDiv" style="background-color: white; border: solid 1px gray; width: 100%; height: 100%"></div>
+  </div>
+  <div class="col-lg-9" ng-hide="ERToggle">
+    <h3>Conceptual Entity Relationship</h3>
+    <div id="myConceptualERDiagramDiv" style="background-color: white; border: solid 1px gray; width: 100%; height: 100%"></div>
+  </div>
+</div>
