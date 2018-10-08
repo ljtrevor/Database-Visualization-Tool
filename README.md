@@ -1,9 +1,5 @@
 # Database-Visualization-Tool
 
-Tool is still under development :)
-
-
-
 Install instructions:
 Download and install the following on your machine:
 Mongodb: https://www.mongodb.com/download-center?jmp=nav#community
